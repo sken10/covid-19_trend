@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-COVID-19 TREND's documentation!
-===============================
+COVID-19 都道府県/週間分析
+==========================
 
 .. toctree::
    :maxdepth: 2
@@ -13,9 +13,8 @@ COVID-19 TREND's documentation!
    /covid-19.rst
 
 
-Indices and tables
-==================
+連絡先
+======
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+Twitter: @sken20k
+
