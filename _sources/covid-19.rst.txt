@@ -132,6 +132,8 @@ PCR 検査の方針や検査件数の能力は都道府県毎に差があるの�
 参考にした web page
 -------------------
 * `北海道の新型コロナウイルスの流行は、抑えられているようだ 
-  <https://togetter.com/li/1482771>`_
+  <https://togetter.com/li/1482771>`_ 
+  by @Kontan_Bigcat/Twitter
 * `github pages で web 公開してみる
-  <https://qiita.com/kinpira/items/505bccacb2fba89c0ff0>`_
+  <https://qiita.com/kinpira/items/505bccacb2fba89c0ff0>`_ 
+  by Kinpira/Qiita
