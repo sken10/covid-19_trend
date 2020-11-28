@@ -3,14 +3,19 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-COVID-19 都道府県/週間分析
-==========================
+COVID-19 JAPAN
+==============
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   /cov19calendar.rst
    /covid-19.rst
+
+
+.. /c19_20200424.rst
+
 
 
 連絡先
