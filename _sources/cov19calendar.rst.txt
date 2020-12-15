@@ -16,7 +16,7 @@ COVID-19 カレンダー
 
 週の陽性確認数(10万人あたり) vs 今週先週比
 ------------------------------------------
-.. image:: ./img/c19n_nr.png
+.. image:: ./img/c19n_nkx.png
     :scale: 40
     :align: center
 
