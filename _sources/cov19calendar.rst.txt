@@ -63,3 +63,8 @@ COVID-19 カレンダー(抜粋)
             :scale: 40
             :align: center
 
+ソース
+======
+
+.. literalinclude:: ./img/nkz.py
+    :pyobject: get_num_chg

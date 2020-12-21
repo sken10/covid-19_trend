@@ -54,6 +54,7 @@
 <li><a class="reference internal" href="#id5">都道府県毎(週次)</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#id6">ソース</a></li>
 </ul>
 
   <h4>Previous topic</h4>
@@ -116,8 +117,8 @@
 </div>
 <div class="section" id="id5">
 <h2>都道府県毎(週次)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-text">都道府県毎</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">都道府県毎</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -135,6 +136,44 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="section" id="id6">
+<h1>ソース<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_num_chg</span><span class="p">(</span><span class="n">dd_r</span><span class="p">,</span> <span class="n">pp_r</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; 直近 1 週間分の 日付, 7日累積, 増減比(7日平均)</span>
+<span class="sd">    </span>
+<span class="sd">    増減比は、曜日毎の偏りを考慮する方式を採用した。</span>
+<span class="sd">    (前の週の同じ曜日との比の平均)</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dd_r, list of datetime : 日付のリスト</span>
+<span class="sd">    pp_r, list of loat : 日ごとの陽性数のリスト</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dd7, list of datetime : 日付のリスト(最終 7 日分)</span>
+<span class="sd">    pp7, list of float : 7日累積</span>
+<span class="sd">    cc7, list of float : 増減比(7日平均)</span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    戻りは最終 7 日分に限定しているが、限定しない方が良いと思う。</span>
+<span class="sd">    (計算できるものは全部返して、使う側で切り取ればよい)</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pp_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pp_r</span><span class="p">)</span>
+    <span class="n">cc</span> <span class="o">=</span> <span class="n">pp_r</span><span class="p">[</span><span class="mi">7</span><span class="p">:]</span><span class="o">/</span><span class="n">pp_r</span><span class="p">[:</span><span class="o">-</span><span class="mi">7</span><span class="p">]</span> <span class="c1"># 前の週の同じ曜日との比</span>
+    <span class="n">pp</span> <span class="o">=</span> <span class="n">pp_r</span><span class="p">[</span><span class="mi">7</span><span class="p">:]</span> <span class="c1"># cc と長さを揃える</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pp</span><span class="p">)</span>
+    
+    <span class="n">dd7</span> <span class="o">=</span> <span class="n">dd_r</span><span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">:]</span>
+    <span class="n">pp7</span> <span class="o">=</span> <span class="n">cum</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span> <span class="mi">7</span><span class="p">)[</span><span class="o">-</span><span class="mi">7</span><span class="p">:]</span>
+    <span class="n">cc7</span> <span class="o">=</span> <span class="n">mav</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span> <span class="mi">7</span><span class="p">)[</span><span class="o">-</span><span class="mi">7</span><span class="p">:]</span>
+    
+    <span class="k">return</span> <span class="n">dd7</span><span class="p">,</span> <span class="n">pp7</span><span class="p">,</span> <span class="n">cc7</span>
+</pre></div>
 </div>
 </div>
 
