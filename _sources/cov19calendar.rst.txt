@@ -68,3 +68,9 @@ COVID-19 カレンダー(抜粋)
 
 .. literalinclude:: ./img/nkz.py
     :pyobject: get_num_chg
+
+.. literalinclude:: ./img/nkz.py
+    :pyobject: cum
+
+.. literalinclude:: ./img/nkz.py
+    :pyobject: mav

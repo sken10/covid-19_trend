@@ -149,7 +149,7 @@
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    dd_r, list of datetime : 日付のリスト</span>
-<span class="sd">    pp_r, list of loat : 日ごとの陽性数のリスト</span>
+<span class="sd">    pp_r, list of float : 日ごとの陽性数のリスト</span>
 <span class="sd">    </span>
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -161,6 +161,12 @@
 <span class="sd">    -----</span>
 <span class="sd">    戻りは最終 7 日分に限定しているが、限定しない方が良いと思う。</span>
 <span class="sd">    (計算できるものは全部返して、使う側で切り取ればよい)</span>
+<span class="sd">    「曜日毎の平均」を採用すると、横軸と縦軸の整合性 (y&gt;1 のとき dx/dt は正)</span>
+<span class="sd">    が成り立たない場合がでてくる。</span>
+<span class="sd">    「曜日毎の比の平均」より「過去7日累積の比」が適切な場面も有ると思う。</span>
+<span class="sd">    休日に実施できなかった検査や追跡が、漏れなく休み明けに遅れて実施される</span>
+<span class="sd">    といた効果だけなら両者に差はない。金曜や休日に人出多くて陽性確認数も多</span>
+<span class="sd">    くなるといった事情があるなら、曜日毎の日の平均が実情を良く表すかもしれない。</span>
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">pp_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pp_r</span><span class="p">)</span>
@@ -173,6 +179,55 @@
     <span class="n">cc7</span> <span class="o">=</span> <span class="n">mav</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span> <span class="mi">7</span><span class="p">)[</span><span class="o">-</span><span class="mi">7</span><span class="p">:]</span>
     
     <span class="k">return</span> <span class="n">dd7</span><span class="p">,</span> <span class="n">pp7</span><span class="p">,</span> <span class="n">cc7</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cum</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; n 点累積</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xx, list of float : データ列 (NaN 含んでいても ok)</span>
+<span class="sd">    n, int : 部分累積の点数 (窓幅)</span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    n 点累積は np.cumsum の差で求める事が多いが、その方法は無効値を含む</span>
+<span class="sd">    リストに対応できない。もう少し素朴な実装を選択した。</span>
+<span class="sd">    range の指定で 1 を足すところを忘れがちなので注意。</span>
+<span class="sd">    </span>
+<span class="sd">    【例】 xx = [0 1 2 3 4 5 6],   n = 3 の時、</span>
+<span class="sd">                         ^---^</span>
+<span class="sd">    末尾の区間の開始指標は 4 なので、range(5) が正解。</span>
+<span class="sd">    len(xx) - n + 1 = 7 - 3 + 1 = 5 </span>
+<span class="sd">    </span>
+<span class="sd">    値を確認したい時に、部分列を参照したくなりそうなので、sum() 適用前の</span>
+<span class="sd">    リストのリストを残しておく。</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">yy</span> <span class="o">=</span> <span class="p">[</span><span class="n">xx</span><span class="p">[</span><span class="n">b</span><span class="p">:</span><span class="n">b</span><span class="o">+</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+    <span class="n">ss</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">yy</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ss</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mav</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; 過去 n 点移動平均</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xx, list of float : データ列 (NaN 含んでいても ok)</span>
+<span class="sd">    n, int : 部分累積の点数</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    a, list of float : 移動平均。長さは len(xx) - n + 1</span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    ライブラリーにありそうだけど、無効値の扱いを調べていないので自分で実装。</span>
+<span class="sd">    あまりよい事ではない。</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cum</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">/</span><span class="n">n</span>
+    <span class="k">return</span> <span class="n">a</span>
 </pre></div>
 </div>
 </div>
