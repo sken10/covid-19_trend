@@ -10,6 +10,7 @@ COVID-19 JAPAN
    :maxdepth: 2
    :caption: Contents:
 
+   /kanagawa.rst
    /cov19calendar.rst
    /covid-19.rst
 

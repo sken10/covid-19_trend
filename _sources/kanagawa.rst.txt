@@ -1,0 +1,78 @@
+
+神奈川県 管理区毎
+=================
+
+管理区毎 年代別
+---------------
+
+.. list-table:: 管理区毎 年代別
+
+    * - 神奈川県全体
+        
+        .. image:: ./img/kana_c00.png
+            :scale: 40
+            :align: center
+        
+      - 平塚保健福祉事務所管内
+        
+        .. image:: ./img/kana_c01.png
+            :scale: 40
+            :align: center
+        
+      - 鎌倉保健福祉事務所管内
+        
+        .. image:: ./img/kana_c02.png
+            :scale: 40
+            :align: center
+        
+    * - 小田原保健福祉事務所管内
+        
+        .. image:: ./img/kana_c03.png
+            :scale: 40
+            :align: center
+        
+      - 厚木保健福祉事務所管内
+        
+        .. image:: ./img/kana_c04.png
+            :scale: 40
+            :align: center
+        
+      - 横浜市分
+        
+        .. image:: ./img/kana_c05.png
+            :scale: 40
+            :align: center
+        
+    * - 川崎市分
+        
+        .. image:: ./img/kana_c06.png
+            :scale: 40
+            :align: center
+        
+      - 相模原市分
+        
+        .. image:: ./img/kana_c07.png
+            :scale: 40
+            :align: center
+        
+      - 横須賀市分
+        
+        .. image:: ./img/kana_c08.png
+            :scale: 40
+            :align: center
+        
+    * - 藤沢市分
+        
+        .. image:: ./img/kana_c09.png
+            :scale: 40
+            :align: center
+        
+      - 茅ヶ崎市分
+        
+        .. image:: ./img/kana_c10.png
+            :scale: 40
+            :align: center
+        
+      - ,
+        
+
