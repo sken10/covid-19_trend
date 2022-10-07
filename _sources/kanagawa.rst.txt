@@ -17,14 +17,14 @@
 ------------
 
 .. image:: ./img/kana_c00.png
-    :scale: 40
+    :scale: 40%
     :align: center
 
 平塚保健福祉事務所管内
 ----------------------
 
 .. image:: ./img/kana_c01.png
-    :scale: 40
+    :scale: 40%
     :align: center
 
 鎌倉保健福祉事務所管内
