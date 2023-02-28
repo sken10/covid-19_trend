@@ -5,7 +5,17 @@
 新規陽性者数 と 増減比の一覧
 ----------------------------
 
+/10万人/週
+^^^^^^^^^^
+
 .. image:: ./img/kana_ctl.png
+    :scale: 40
+    :align: center
+
+/日 (対数)
+^^^^^^^^^^
+
+.. image:: ./img/kana_abs.png
     :scale: 40
     :align: center
 
