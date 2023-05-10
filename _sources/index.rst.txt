@@ -3,30 +3,41 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-COVID-19 Kanagawa
+COVID-19 Kawasaki
 =================
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+
+   kawasaki/kawa01.rst
+
+------------------------------------------------------------------------------------
+
+これより下は 5類移行前
+========================
+
+5類移行に伴い、下記コンテンツの更新を停止しました。
+
+COVID-19 Kanagawa
+^^^^^^^^^^^^^^^^^^
+.. toctree::
+   :maxdepth: 1
 
    /kanagawa.rst
 
 COVID-19 JAPAN
-==============
+^^^^^^^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
 
    /cov19calendar.rst
 
 COVID-19 JAPAN (OLD)
-====================
+^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
 
    /covid-19.rst
 
