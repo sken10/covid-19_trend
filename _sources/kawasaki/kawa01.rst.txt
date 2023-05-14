@@ -19,7 +19,7 @@
 区ごと報告数
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: ./img/kawa_seg.png
+.. image:: ./img/kawa_reg.png
     :scale: 80
     :align: center
 
