@@ -10,6 +10,7 @@ COVID-19 Kawasaki
    :maxdepth: 1
 
    kawasaki/kawa01.rst
+   kawasaki/kawa02.rst
 
 ------------------------------------------------------------------------------------
 
