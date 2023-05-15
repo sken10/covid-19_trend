@@ -3,9 +3,31 @@
 
 .. list-table::
     
-    * - .. image:: ./img/kawa_lim.png
-            :scale: 40%
+    * - .. figure:: ./img/kawa_lim.png
+            :scale: 30%
+      
+            遅れ日数制限
+      
+      - .. figure:: ./img/kawa_dow.png
+            :scale: 30%
+      
+            曜日感度補正
+      
+    * - .. figure:: ./img/kawa_delay.png
+            :scale: 30%
+      
+            遅れ可視化1 (重ね書き)
+      
+      - 
+    * - .. figure:: ./img/kawa_d2.png
+            :scale: 30%
+      
+            遅れ可視化2 (遅れ日数制限)
+      
+      - .. figure:: ./img/kawa_d3.png
+            :scale: 30%
+      
+            遅れ可視化3 (遅れ日数制限, 相対 %)
+      
     
-      - .. image:: ./img/kawa_dow.png
-            :scale: 40%
-    
+
