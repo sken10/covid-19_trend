@@ -1,4 +1,4 @@
-:og:image: /_images/kawa_num_chg_med.png
+.. :og:image: /_images/kawa_num_chg_med.png
 
 **********************************************************************
 基本グラフ
