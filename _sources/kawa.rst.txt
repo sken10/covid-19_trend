@@ -1,5 +1,9 @@
 :og:description: COVID-19 分析/川崎市
-:og:image: https://sken10.github.io/covid-19_trend/_images/kawa_num_chg_med.png
+:og:image: /_images/kawa_num_chg_med.png
+
+.. :og:image: https://sken10.github.io/covid-19_trend/_images/kawa_num_chg_med.png
+
+ogp 設定
 
 ############################################
 川崎市 (リアルタイムサーベイランス)
