@@ -7,9 +7,12 @@
 
 以下の3種類のデータを毎日18h に取得して zip にまとめた (2023/05/10 以降)
 
-    - kw_sex_YYMMDD_hhmmss.csv : 男女別集計表
-    - kw_age_YYMMDD_hhmmss.csv : 年齢階級別集計
-    - kw_reg_YYMMDD_hhmmss.csv : 区別集計
+.. csv-table::
+    :header: "集計方法", "ファイル名", "備考"
+    
+    男女別集計表, kw_sex_年月日_時分秒.csv, 医療機関数+医療機関当たりを含む
+    年齢階級別集計, kw_age_年月日_時分秒.csv, 医療機関数の情報なし
+    区別集計, kw_reg_年月日_時分秒.csv, 医療機関当たり報告数を含む
 
 ダウンロード  :download:`kawasaki_data.zip <./files/kawasaki_data.zip>`
 
@@ -32,6 +35,7 @@
             遅れ可視化1 (重ね書き)
       
       - 
+      
     * - .. figure:: ./img/kawa_d2.png
             :scale: 30%
       
