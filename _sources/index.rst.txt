@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+######################
 COVID-19 Kawasaki
-=================
+######################
 
 .. toctree::
    :maxdepth: 1
@@ -14,28 +15,33 @@ COVID-19 Kawasaki
 
 ------------------------------------------------------------------------------------
 
+########################
 これより下は 5類移行前
-========================
+########################
 
 5類移行に伴い、下記コンテンツの更新を停止しました。
 
+*******************
 COVID-19 Kanagawa
-^^^^^^^^^^^^^^^^^^
+*******************
+
 .. toctree::
    :maxdepth: 1
 
    /kanagawa.rst
 
+*****************
 COVID-19 JAPAN
-^^^^^^^^^^^^^^^^^^
+*****************
 
 .. toctree::
    :maxdepth: 1
 
    /cov19calendar.rst
 
+**********************
 COVID-19 JAPAN (OLD)
-^^^^^^^^^^^^^^^^^^^^^
+**********************
 
 .. toctree::
    :maxdepth: 1
@@ -44,8 +50,9 @@ COVID-19 JAPAN (OLD)
 
 .. /c19_20200424.rst
 
+*****************
 連絡先
-======
+*****************
 
 Twitter: @sken20k
 

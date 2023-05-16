@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>川崎市 試験的解析 &#8212; COVID-19 TREND  documentation</title>
+    <title>報告遅れの評価 &amp; 報告遅れの影響を軽減する手法 (試験的分析) &#8212; COVID-19 TREND  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css" />
     
@@ -17,7 +17,7 @@
     <script src="../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="神奈川県 管理区毎" href="../kanagawa.html" />
+    <link rel="next" title="神奈川県 管理区毎 (更新停止)" href="../kanagawa.html" />
     <link rel="prev" title="川崎市 リアルタイム サーベイランス" href="kawa01.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!--[if lt IE 9]>
@@ -31,13 +31,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../kanagawa.html" title="神奈川県 管理区毎"
+          <a href="../kanagawa.html" title="神奈川県 管理区毎 (更新停止)"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="kawa01.html" title="川崎市 リアルタイム サーベイランス"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">COVID-19 TREND  documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">川崎市 試験的解析</a></li> 
+        <li class="nav-item nav-item-this"><a href="">報告遅れの評価 &amp; 報告遅れの影響を軽減する手法 (試験的分析)</a></li> 
       </ul>
     </div>  
 
@@ -47,50 +47,92 @@
           <div class="body" role="main">
             
   <section id="id1">
-<h1>川崎市 試験的解析<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<h1>報告遅れの評価 &amp; 報告遅れの影響を軽減する手法 (試験的分析)<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<section id="id2">
+<h2>データ<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>以下の3種類のデータを毎日18h に取得して zip にまとめた (2023/05/10 以降)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>kw_sex_YYMMDD_hhmmss.csv : 男女別集計表</p></li>
+<li><p>kw_age_YYMMDD_hhmmss.csv : 年齢階級別集計</p></li>
+<li><p>kw_reg_YYMMDD_hhmmss.csv : 区別集計</p></li>
+</ul>
+</div></blockquote>
+<p>ダウンロード  <a class="reference download internal" download="" href="../_downloads/b002179a5c03149bd41dd7c6f51741d7/kawasaki_data.zip"><code class="xref download docutils literal notranslate"><span class="pre">kawasaki_data.zip</span></code></a></p>
+<p><strong>源泉</strong> :川崎市感染症情報発信システム/リアルタイムサーベイランス/ダウンロードサービス</p>
+<p><strong>注意</strong> :文字コードは SHIFT_JIS で波ダッシュが使われている。SHIFT_JIS
+の波ダッシュ「～] は Unicode に変換するとき、使うツールによって波ダッシ
+ュ「〜」U+301C になったり、全角チルダ「～」U+FF5E になったりして混乱する。
+詳しくは、&quot;波ダッシュ 全角チルダ&quot; で検索を。</p>
+</section>
+<section id="id3">
+<h2>報告遅れ評価<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default">
 <tbody>
-<tr class="row-odd"><td><figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="../_images/kawa_lim.png"><img alt="../_images/kawa_lim.png" src="../_images/kawa_lim.png" style="width: 300.0px; height: 240.0px;" /></a>
-<figcaption>
-<p><span class="caption-text">遅れ日数制限</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</td>
-<td><figure class="align-default" id="id3">
-<a class="reference internal image-reference" href="../_images/kawa_dow.png"><img alt="../_images/kawa_dow.png" src="../_images/kawa_dow.png" style="width: 300.0px; height: 240.0px;" /></a>
-<figcaption>
-<p><span class="caption-text">曜日感度補正</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</td>
-</tr>
-<tr class="row-even"><td><figure class="align-default" id="id4">
+<tr class="row-odd"><td><figure class="align-default" id="id7">
 <a class="reference internal image-reference" href="../_images/kawa_delay.png"><img alt="../_images/kawa_delay.png" src="../_images/kawa_delay.png" style="width: 300.0px; height: 240.0px;" /></a>
 <figcaption>
-<p><span class="caption-text">遅れ可視化1 (重ね書き)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">遅れ可視化1 (重ね書き)</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><figure class="align-default" id="id5">
+<tr class="row-even"><td><figure class="align-default" id="id8">
 <a class="reference internal image-reference" href="../_images/kawa_d2.png"><img alt="../_images/kawa_d2.png" src="../_images/kawa_d2.png" style="width: 300.0px; height: 240.0px;" /></a>
 <figcaption>
-<p><span class="caption-text">遅れ可視化2 (遅れ日数制限)</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">遅れ可視化2 (遅れ日数制限)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </td>
-<td><figure class="align-default" id="id6">
+<td><figure class="align-default" id="id9">
 <a class="reference internal image-reference" href="../_images/kawa_d3.png"><img alt="../_images/kawa_d3.png" src="../_images/kawa_d3.png" style="width: 300.0px; height: 240.0px;" /></a>
 <figcaption>
-<p><span class="caption-text">遅れ可視化3 (遅れ日数制限, 相対 %)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">遅れ可視化3 (遅れ日数制限, 相対 %)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="id4">
+<h2>報告遅れの影響を軽減した分析<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="../_images/kawa_lim.png"><img alt="../_images/kawa_lim.png" src="../_images/kawa_lim.png" style="width: 300.0px; height: 240.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">遅れ日数制限</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-default" id="id11">
+<a class="reference internal image-reference" href="../_images/kawa_dow.png"><img alt="../_images/kawa_dow.png" src="../_images/kawa_dow.png" style="width: 300.0px; height: 240.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">曜日感度補正</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<section id="id5">
+<h3>利点<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>増減比計算において報告遅れに起因する誤差を避けることができる。</p></li>
+<li><p>報告遅れによる見かけの減少が生じない(誤解を避けることができる)。</p></li>
+<li><p>データの確定範囲が明確になる。</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>欠点<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>データを毎日取得する必要がある。何らかの理由でデータ取得に失敗すると適用できない</p></li>
+<li><p>報告遅れの特性(遅れ日数の割合分布)が変化しないことを仮定している。</p></li>
+</ul>
+</section>
+</section>
 </section>
 
 
@@ -101,6 +143,22 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">報告遅れの評価 &amp; 報告遅れの影響を軽減する手法 (試験的分析)</a><ul>
+<li><a class="reference internal" href="#id2">データ</a></li>
+<li><a class="reference internal" href="#id3">報告遅れ評価</a></li>
+<li><a class="reference internal" href="#id4">報告遅れの影響を軽減した分析</a><ul>
+<li><a class="reference internal" href="#id5">利点</a></li>
+<li><a class="reference internal" href="#id6">欠点</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
     <h4>Previous topic</h4>
     <p class="topless"><a href="kawa01.html"
                           title="previous chapter">川崎市 リアルタイム サーベイランス</a></p>
@@ -108,7 +166,7 @@
   <div>
     <h4>Next topic</h4>
     <p class="topless"><a href="../kanagawa.html"
-                          title="next chapter">神奈川県 管理区毎</a></p>
+                          title="next chapter">神奈川県 管理区毎 (更新停止)</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -138,13 +196,13 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../kanagawa.html" title="神奈川県 管理区毎"
+          <a href="../kanagawa.html" title="神奈川県 管理区毎 (更新停止)"
              >next</a> |</li>
         <li class="right" >
           <a href="kawa01.html" title="川崎市 リアルタイム サーベイランス"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">COVID-19 TREND  documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">川崎市 試験的解析</a></li> 
+        <li class="nav-item nav-item-this"><a href="">報告遅れの評価 &amp; 報告遅れの影響を軽減する手法 (試験的分析)</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
