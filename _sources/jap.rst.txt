@@ -3,7 +3,7 @@
 ********************
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    /cov19calendar.rst
    /covid-19.rst

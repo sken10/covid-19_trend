@@ -8,7 +8,7 @@ COVID-19 データ分析
 ########################
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     
     kawa.rst
 
@@ -18,7 +18,7 @@ COVID-19 データ分析
 5類移行に伴い、下記コンテンツの更新を停止しました。
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     
     kana.rst
     jap.rst
