@@ -10,20 +10,21 @@
     :scale: 80
     :align: center
 
-年代ごと報告数
-===============================
+年齢階級別集計 & 区別集計
+=========================
 
-.. image:: ./img/kawa_age.png
-    :scale: 80
-    :align: center
-
-区ごと報告数
-===============================
-
-.. image:: ./img/kawa_reg.png
-    :scale: 80
-    :align: center
-
+.. list-table::
+    
+    * - .. figure:: ./img/kawa_age.png
+            :scale: 30%
+      
+            年齢階級別集計
+      
+      - .. figure:: ./img/kawa_reg.png
+            :scale: 30%
+      
+            区別集計
+      
 --------------
 
 .. raw:: html
