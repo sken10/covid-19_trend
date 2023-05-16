@@ -74,3 +74,10 @@
 
 * データを毎日取得する必要がある。何らかの理由でデータ取得に失敗すると適用できない
 * 報告遅れの特性(遅れ日数の割合分布)が変化しないことを仮定している。
+
+------------------
+
+.. raw:: html
+
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
