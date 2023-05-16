@@ -1,3 +1,5 @@
+:og:description: COVID-19 Realtime Servayllance in Kawasaki-City
+:og:image: https://sken10.github.io/covid-19_trend/_images/kawa_num_chg_med.png
 
 ############################################
 川崎市 (リアルタイムサーベイランス)
