@@ -8,11 +8,11 @@
 以下の3種類のデータを毎日18h に取得して zip にまとめた (2023/05/10 以降)
 
 .. csv-table::
-    :header: "集計方法", "ファイル名", "備考"
+    :header: 集計方法, ファイル名, 医療機関数, 医療機関あたり
     
-    男女別集計表, kw_sex_年月日_時分秒.csv, 医療機関数+医療機関当たりを含む
-    年齢階級別集計, kw_age_年月日_時分秒.csv, 医療機関数の情報なし
-    区別集計, kw_reg_年月日_時分秒.csv, 医療機関当たり報告数を含む
+    男女別集計表, kw_sex_年月日_時分秒.csv, " 〇", " 〇"
+    年齢階級別集計, kw_age_年月日_時分秒.csv, " ×", " ×"
+    区別集計, kw_reg_年月日_時分秒.csv, " ×", " 〇"
 
 ダウンロード  :download:`kawasaki_data.zip <./files/kawasaki_data.zip>`
 
@@ -79,5 +79,12 @@
 
 .. raw:: html
 
-    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" 
+             src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a><br>
+    This work is licensed under a 
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        Creative Commons Attribution 4.0 International License
+    </a>.
 
