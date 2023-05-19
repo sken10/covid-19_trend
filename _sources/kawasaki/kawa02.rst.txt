@@ -16,6 +16,10 @@
     年齢階級別集計, kw_age_年月日_時分秒.csv, " ×", " ×"
     区別集計, kw_reg_年月日_時分秒.csv, " ×", " 〇"
 
+
+更新時刻が 18h から大きくずれているときは、動作試験の最中です。
+zip ファイルの中に、18時以外のデータを含んでいることがあります。
+
 .. list-table::
     
     * - ダウンロード  :download:`kawasaki_data.zip <./img/kawasaki_data.zip>`
