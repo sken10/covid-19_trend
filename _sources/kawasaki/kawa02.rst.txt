@@ -18,7 +18,7 @@
 
 .. list-table::
     
-    * - ダウンロード  :download:`kawasaki_data.zip <./files/kawasaki_data.zip>`
+    * - ダウンロード  :download:`kawasaki_data.zip <./img/kawasaki_data.zip>`
       - .. include:: ./img/day_of_issue.txt
 
 **源泉** :川崎市感染症情報発信システム/リアルタイムサーベイランス/ダウンロードサービス
