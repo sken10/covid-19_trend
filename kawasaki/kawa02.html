@@ -51,8 +51,9 @@
 <h1>データアーカイブ &amp; 実験的分析<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <section id="id2">
 <h2>データアーカイブ<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
-<p>以下の3種類のデータを毎日18h に取得して zip にまとめたものを
-ダウンロードできます。(データは 2023/05/10 以降)。</p>
+<p>以下の3種類のデータを毎日18h に取得しています。
+zip にまとめたものをダウンロードできます。
+(データは 2023/05/10 以降)。</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>集計方法</p></th>
@@ -102,7 +103,7 @@ zip ファイルの中に、18時以外のデータを含んでいることが�
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p>ダウンロード  <a class="reference download internal" download="" href="../_downloads/ec72953a21c1779196ac7f7867dfe0ec/kawasaki_data.zip"><code class="xref download docutils literal notranslate"><span class="pre">kawasaki_data.zip</span></code></a></p></td>
-<td><p>2023/05/26 (金) 18:00</p></td>
+<td><p>2023/05/27 (土) 18:00</p></td>
 </tr>
 </tbody>
 </table>
@@ -147,6 +148,13 @@ zip ファイルの中に、18時以外のデータを含んでいることが�
 </section>
 <section id="id5">
 <h3>遅れ日数制限による前週比の精度改善<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<p>このセクションで遅れ日数を揃える工夫をしているが、通常の医療機関当たりの
+報告数を使った分析に対する優位性はあまりない。感染者の実数と違って、医療
+機関当たりの報告数は比較的早い時期に±10% 程度に落ち着くため、そこからの
+改善は難しい。逆にいうと、医療機関あたりの報告は十分に使い勝手が良い。</p>
+<p>以下、前週比をできるだけ早く(精度よく)得るための工夫について述べる。
+報告遅れの特性が曜日ごとに安定していれば、データが全て揃う前に前週比
+を精度よく推定できるはず、という考えに基づくものである。</p>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><figure class="align-default" id="id10">
