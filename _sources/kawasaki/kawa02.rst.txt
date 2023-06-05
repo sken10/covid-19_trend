@@ -22,8 +22,8 @@ zip にまとめたものをダウンロードできます。
     * - ダウンロード  :download:`kawasaki_data.zip <./img/kawasaki_data.zip>`
       - .. include:: ./img/date_of_issue.txt
 
-.. 同種のデータを以下のサイトでも取得/公開しています(バックアップの意味で)、
-   本サイトの調子が悪いときに試してみてください。
+同種のデータを別のサイトでも取得/公開しています(バックアップの意味で)、
+本サイトの調子が悪いときは以下を試してみてください。
 
     http://home.catv.ne.jp/dd/sken/
     
