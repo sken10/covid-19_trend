@@ -40,6 +40,20 @@ zip にまとめたものをダウンロードできます。
 詳しくは、"波ダッシュ 全角チルダ" で検索を。
 
 
+データ取得プログラム
+====================
+
+.. list-table::
+    
+    * - :download:`retr_n.py <./img/retr_n.py>`
+      - 男女別, 年齢階級別,区別の3種類のデータを取得する
+    * - :download:`loop.py <./img/loop.py>`
+      - 一日に一回、指定した時刻に上記を実行する
+    
+.. literalinclude:: ./img/retr_n.py
+    :language: none
+    :lines: 2-46
+
 実験的分析
 ===============================
 

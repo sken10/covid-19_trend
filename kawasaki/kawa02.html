@@ -120,31 +120,91 @@ zip にまとめたものをダウンロードできます。
 詳しくは、&quot;波ダッシュ 全角チルダ&quot; で検索を。</p>
 </section>
 <section id="id3">
-<h2>実験的分析<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
-<section id="id4">
-<h3>報告遅れ評価<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<h2>データ取得プログラム<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default">
 <tbody>
-<tr class="row-odd"><td><figure class="align-default" id="id7">
+<tr class="row-odd"><td><p><a class="reference download internal" download="" href="../_downloads/cec982a2819cdab38f0c9670deee6829/retr_n.py"><code class="xref download docutils literal notranslate"><span class="pre">retr_n.py</span></code></a></p></td>
+<td><p>男女別, 年齢階級別,区別の3種類のデータを取得する</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="../_downloads/5132e4ae4766b12df5bd885a8cf798ae/loop.py"><code class="xref download docutils literal notranslate"><span class="pre">loop.py</span></code></a></p></td>
+<td><p>一日に一回、指定した時刻に上記を実行する</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;&quot;&quot;retr_n.py
+
+川崎市リアルタイムサーベイランスからデータ(*.csv) を取得する。
+    
+    疾患選択:
+        新型コロナウィルス感染症(COVID-19)
+    
+    取得ファイル名 (集計方法):
+        data/kw_sex_YYMMDD_hhmmss.csv (男女別集計表)
+        data/kw_age_YYMMDD_hhmmss.csv (年齢階級別集計)
+        data/kw_reg_YYMMDD_hhmmss.csv (区別集計)
+    
+    データの種類:
+        日別データ
+    
+    期間:
+        2023年4月13日～実行日当日
+
+注意
+   - 取得したデータのレコード数を確認している。上の取得期間を変更する場合には、
+     そちらも変更する必要がある。
+    
+   - 取得データの文字コードは SHIFT_JIS。年齢階級に「～」波ダッシュが使われている。
+     SHIFT_JIS の波ダッシュは、問題を起こしやすい。
+
+動作環境
+    Python 3.11
+    Windows11 (10 でも大丈夫と思う)
+    コマンドプロンプトから python retr_n.py で実行
+    
+依存関係 (実行に必要なもの)
+    
+    1. Chrome (google の WEB browser)
+        
+    2. selenium 
+        &gt; pip install slenium
+        
+    3. webdriver-manager
+        &gt; pip install webdriver-manager
+        selenium が要求する chrome-driver は chrome のバージョンに依存するが、
+        chrome は勝手にバージョンアップすることがあるため、あらかじめ用意した
+        chrome-driver で突然エラーが発生することになる。
+        webdriver-manager は、適切な chrome-driver を動的に割り当ててくれる。
+
+&quot;&quot;&quot;
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>実験的分析<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<section id="id5">
+<h3>報告遅れ評価<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><figure class="align-default" id="id8">
 <a class="reference internal image-reference" href="../_images/kawa_delay.png"><img alt="../_images/kawa_delay.png" src="../_images/kawa_delay.png" style="width: 300.0px; height: 240.0px;" /></a>
 <figcaption>
-<p><span class="caption-text">遅れ可視化1 (重ね書き)</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">遅れ可視化1 (重ね書き)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </td>
 <td></td>
 </tr>
-<tr class="row-even"><td><figure class="align-default" id="id8">
+<tr class="row-even"><td><figure class="align-default" id="id9">
 <a class="reference internal image-reference" href="../_images/kawa_d2.png"><img alt="../_images/kawa_d2.png" src="../_images/kawa_d2.png" style="width: 300.0px; height: 240.0px;" /></a>
 <figcaption>
-<p><span class="caption-text">遅れ可視化2 (遅れ日数制限)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">遅れ可視化2 (遅れ日数制限)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </td>
-<td><figure class="align-default" id="id9">
+<td><figure class="align-default" id="id10">
 <a class="reference internal image-reference" href="../_images/kawa_d3.png"><img alt="../_images/kawa_d3.png" src="../_images/kawa_d3.png" style="width: 300.0px; height: 240.0px;" /></a>
 <figcaption>
-<p><span class="caption-text">遅れ可視化3 (遅れ日数制限, 相対 %)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">遅れ可視化3 (遅れ日数制限, 相対 %)</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </td>
@@ -152,8 +212,8 @@ zip にまとめたものをダウンロードできます。
 </tbody>
 </table>
 </section>
-<section id="id5">
-<h3>遅れ日数制限による前週比の精度改善<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<section id="id6">
+<h3>遅れ日数制限による前週比の精度改善<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
 <p>このセクションで遅れ日数を揃える工夫をしているが、通常の医療機関当たりの
 報告数を使った分析に対する優位性はあまりない。感染者の実数と違って、医療
 機関当たりの報告数は比較的早い時期に±10% 程度に落ち着くため、そこからの
@@ -163,17 +223,17 @@ zip にまとめたものをダウンロードできます。
 を精度よく推定できるはず、という考えに基づくものである。</p>
 <table class="docutils align-default">
 <tbody>
-<tr class="row-odd"><td><figure class="align-default" id="id10">
+<tr class="row-odd"><td><figure class="align-default" id="id11">
 <a class="reference internal image-reference" href="../_images/kawa_lim.png"><img alt="../_images/kawa_lim.png" src="../_images/kawa_lim.png" style="width: 300.0px; height: 240.0px;" /></a>
 <figcaption>
-<p><span class="caption-text">医療機関あたり</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">医療機関あたり</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </td>
-<td><figure class="align-default" id="id11">
+<td><figure class="align-default" id="id12">
 <a class="reference internal image-reference" href="../_images/kawa_dow.png"><img alt="../_images/kawa_dow.png" src="../_images/kawa_dow.png" style="width: 300.0px; height: 270.0px;" /></a>
 <figcaption>
-<p><span class="caption-text">発生総数 + 曜日感度補正</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">発生総数 + 曜日感度補正</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </td>
@@ -193,7 +253,7 @@ zip にまとめたものをダウンロードできます。
 <li><p>医療機関あたりは、遅れによる終端の過小評価が出にくい
 (終端ほど誤差は大きいけれど)</p></li>
 <li><p>遅れ日数を制限することで、遅れによって生じる前週比計算
-の誤差 <a class="footnote-reference brackets" href="#f1" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> をキャンセルできる
+の誤差 <a class="footnote-reference brackets" href="#f1" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> をキャンセルできる
 (特性が曜日ごとに安定していれば良い)</p></li>
 </ul>
 </td>
@@ -227,7 +287,7 @@ zip にまとめたものをダウンロードできます。
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="f1" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">1</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
 <p>理想的には医療機関あたりは遅れ日数に依存しないが、実際のデータを見ると
 低減する傾向が観測されている。遅れの大きい観測ほど感染者数が少ないことを意味する。</p>
 </aside>
@@ -256,9 +316,10 @@ This work is licensed under a
     <ul>
 <li><a class="reference internal" href="#">データアーカイブ &amp; 実験的分析</a><ul>
 <li><a class="reference internal" href="#id2">データアーカイブ</a></li>
-<li><a class="reference internal" href="#id3">実験的分析</a><ul>
-<li><a class="reference internal" href="#id4">報告遅れ評価</a></li>
-<li><a class="reference internal" href="#id5">遅れ日数制限による前週比の精度改善</a></li>
+<li><a class="reference internal" href="#id3">データ取得プログラム</a></li>
+<li><a class="reference internal" href="#id4">実験的分析</a><ul>
+<li><a class="reference internal" href="#id5">報告遅れ評価</a></li>
+<li><a class="reference internal" href="#id6">遅れ日数制限による前週比の精度改善</a></li>
 </ul>
 </li>
 </ul>
