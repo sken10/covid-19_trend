@@ -1,0 +1,251 @@
+
+
+<!doctype html>
+
+<html lang="jp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>実験的分析 &#8212; COVID-19 TREND  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="神奈川県" href="../kana.html" />
+    <link rel="prev" title="データアーカイブ" href="kawa02.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../kana.html" title="神奈川県"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="kawa02.html" title="データアーカイブ"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">COVID-19 TREND  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../kawa.html" accesskey="U">川崎市 (リアルタイムサーベイランス)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">実験的分析</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1>実験的分析<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<section id="id2">
+<h2>報告遅れ評価 &amp; 前週比の精度改善<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<section id="id3">
+<h3>報告遅れ評価<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="../_images/kawa_delay.png"><img alt="../_images/kawa_delay.png" src="../_images/kawa_delay.png" style="width: 300.0px; height: 240.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">遅れ可視化1 (重ね書き)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="../_images/kawa_d2.png"><img alt="../_images/kawa_d2.png" src="../_images/kawa_d2.png" style="width: 300.0px; height: 240.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">遅れ可視化2 (遅れ日数制限)</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-default" id="id8">
+<a class="reference internal image-reference" href="../_images/kawa_d3.png"><img alt="../_images/kawa_d3.png" src="../_images/kawa_d3.png" style="width: 300.0px; height: 240.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">遅れ可視化3 (遅れ日数制限, 相対 %)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h3>前週比の精度改善(遅れ日数考慮)<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p>このセクションで遅れ日数を揃える工夫をしているが、通常の医療機関当たりの
+報告数を使った分析に対する優位性はあまりない。感染者の実数と違って、医療
+機関当たりの報告数は比較的早い時期に±10% 程度に落ち着くため、そこからの
+改善は難しい。逆にいうと、医療機関あたりの報告は十分に使い勝手が良い。</p>
+<p>以下、前週比をできるだけ早く(精度よく)得るための工夫について述べる。
+報告遅れの特性が曜日ごとに安定していれば、データが全て揃う前に前週比
+を精度よく推定できるはず、という考えに基づくものである。</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><figure class="align-default" id="id9">
+<a class="reference internal image-reference" href="../_images/kawa_lim.png"><img alt="../_images/kawa_lim.png" src="../_images/kawa_lim.png" style="width: 300.0px; height: 240.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">医療機関あたり</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="../_images/kawa_dow.png"><img alt="../_images/kawa_dow.png" src="../_images/kawa_dow.png" style="width: 300.0px; height: 270.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">発生総数 + 曜日感度補正</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>手法</p></th>
+<th class="head"><p>利点</p></th>
+<th class="head"><p>欠点</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>医療機関あたり (遅れ日数制限)</p></td>
+<td><ul class="simple">
+<li><p>医療機関あたりは、遅れによる終端の過小評価が出にくい
+(終端ほど誤差は大きいけれど)</p></li>
+<li><p>遅れ日数を制限することで、遅れによって生じる前週比計算
+の誤差 <a class="footnote-reference brackets" href="#f1" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> をキャンセルできる
+(特性が曜日ごとに安定していれば良い)</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>データを毎日取得する必要がある。</p></li>
+<li><p>何らかの理由でデータが欠落すると適用できない</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>.</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>発生総数 (遅れ日数制限 + 曜日感度補正 + 外れ値除外)</p></td>
+<td><ul class="simple">
+<li><p>遅れ日数を制限することで確定範囲のみプロットとなり、追加報告による変化が生じない。
+また、終端の過小評価にまつわる誤解を避けることができる</p></li>
+<li><p>曜日感度を補正することで、移動平均をとる前の段階でも日単位の動きが見えてくる。</p></li>
+<li><p>祝日効果による極端な減少を外れ値として除外するおとで、
+滑らかな出力(それは市中の感染状況をよく表すと期待される)が得られる。</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>祝日(特に大型連休)のときは、曜日感度の補正がうまく働かない</p></li>
+<li><p>長期的に曜日感度が変化することに注意が必要</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">1</a><span class="fn-bracket">]</span></span>
+<p>理想的には医療機関あたりは遅れ日数に依存しないが、実際のデータを見ると
+低減する傾向が観測されている。遅れの大きい観測ほど感染者数が少ないことを意味する。</p>
+</aside>
+</aside>
+<hr class="docutils" />
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+    <img alt="Creative Commons License" style="border-width:0"
+         src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+</a><br>
+This work is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+    Creative Commons Attribution 4.0 International License
+</a>.</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">実験的分析</a><ul>
+<li><a class="reference internal" href="#id2">報告遅れ評価 &amp; 前週比の精度改善</a><ul>
+<li><a class="reference internal" href="#id3">報告遅れ評価</a></li>
+<li><a class="reference internal" href="#id4">前週比の精度改善(遅れ日数考慮)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="kawa02.html"
+                          title="previous chapter">データアーカイブ</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../kana.html"
+                          title="next chapter">神奈川県</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/kawasaki/kawa03.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../kana.html" title="神奈川県"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="kawa02.html" title="データアーカイブ"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">COVID-19 TREND  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../kawa.html" >川崎市 (リアルタイムサーベイランス)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">実験的分析</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, sken10.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    </div>
+  </body>
+</html>

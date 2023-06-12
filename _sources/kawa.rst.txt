@@ -7,4 +7,5 @@
    
    kawasaki/kawa01.rst
    kawasaki/kawa02.rst
+   kawasaki/kawa03.rst
 
