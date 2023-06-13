@@ -9,7 +9,7 @@ import retr_n
 def count_down(t_wait):
     while t_wait:
         t_wait = t_wait - 1
-        sys.stderr.write('count %d\r' % (t_wait))
+        sys.stderr.write(' count %3d\r' % (t_wait))
         sys.stderr.flush()
         time.sleep(1)
     
@@ -26,7 +26,7 @@ def main():
     while 1:
         t = datetime.now()
         h = t.hour
-        if (h_prev, h) == ((h_target - 1) % 24, h_target)):
+        if (h_prev, h) == ((h_target - 1) % 24, h_target):
             t_wait = random.randint(60, 120) # 1～2分待ってスタート
             count_down(t_wait)
             sys.stderr.write('JOB at %s\n' % t.strftime('%Y/%m/%d %H:%m'))
