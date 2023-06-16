@@ -34,7 +34,7 @@
     1. Chrome (google の WEB browser)
         
     2. selenium 
-        > pip install slenium
+        > pip install selenium
         
     3. webdriver-manager
         > pip install webdriver-manager
