@@ -29,7 +29,7 @@ def main():
         if (h_prev, h) == ((h_target - 1) % 24, h_target):
             t_wait = random.randint(60, 120) # 1～2分待ってスタート
             count_down(t_wait)
-            sys.stderr.write('JOB at %s\n' % t.strftime('%Y/%m/%d %H:%m'))
+            sys.stderr.write('JOB at %s\n' % t.strftime('%Y/%m/%d %H:%M'))
             retr_n.one_shot()
             
         h_prev = h
