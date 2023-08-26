@@ -2,10 +2,12 @@
 川崎市 (リアルタイムサーベイランス)
 ############################################
 
+以下のページの更新を停止しています。
+
+毎日18時のデータ提供も停止しました。
+
 .. toctree::
    :maxdepth: 2
    
    kawasaki/kawa01.rst
-   kawasaki/kawa02.rst
-   kawasaki/kawa03.rst
 
